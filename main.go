@@ -65,4 +65,11 @@ func main() {
 	var note4 Note
 	db.Select("Id", "Title").Find(&note4)
 	fmt.Println(note4)
+
+	// update
+
+	// db.Model(&note3).Where("title = ?", "Demo note").Update("title", "Demo changed")
+	db.Where("title = ? AND content= ?", "Demo changed", "this is a demo note").Find(&note3)
+
+	fmt.Println(note3)
 }
